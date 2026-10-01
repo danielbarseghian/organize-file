@@ -10,5 +10,12 @@ fn main() {
         std::process::exit(0)
     }
 
-    dbg!(args);
+    dbg!(&args); // i need to borrow it hear or else i can't use it afterweards!'
+
+    println!("{}", args[1]);
+
+    // splits for checking the extension
+    let splits: Vec<&str> = args[1].split(".").collect();
+
+    println!("{}", splits[1]);
 }
