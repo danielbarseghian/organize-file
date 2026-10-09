@@ -10,39 +10,42 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<String> = env::args().collect();
 
     // check the length
-    if args.len() != 2 {
+    if args.len() < 2 {
         println!("Usage: cargo run -- filename");
         std::process::exit(1)
     }
 
-    // check if path is existante
-    if !Path::new(&args[1]).exists() {
-        return Err(Error::new(
-            ErrorKind::NotFound,
-            "file doesnt exists"
-        )
-        .into()); // convert the error to box
+    for i in 1..args.len() {
+
+        // check if path is existante
+        if !Path::new(&args[i]).exists() {
+            return Err(Error::new(
+                ErrorKind::NotFound,
+                format!("file {} doesnt exists", args[i])
+            )
+            .into()); // convert the error to box
+        }
+
+        // splits for checking the extension
+        let splits: Vec<&str> = args[i].split(".").collect();
+
+        let folder = format!("./organize/{}", splits[1]);
+
+        let paths = Path::new(&folder);
+
+        // if it doesnt existe
+        if !paths.exists() {
+            fs::create_dir_all(&folder)?;
+        }
+
+        // make variable for moving
+        let new_file = format!("{}/{}", &folder, args[i]);
+
+        dbg!(&new_file);
+
+        // the compiler is too good
+        fs::rename(<String as Clone>::clone(&args[i]), new_file)?;
     }
-
-    // splits for checking the extension
-    let splits: Vec<&str> = args[1].split(".").collect();
-
-    let folder = format!("./organize/{}", splits[1]);
-
-    let paths = Path::new(&folder);
-
-    // if it doesnt existe
-    if !paths.exists() {
-        fs::create_dir_all(&folder)?;
-    }
-
-    // make variable for moving
-    let new_file = format!("{}/{}", &folder, args[1]);
-
-    dbg!(&new_file);
-
-    // the compiler is too good
-    fs::rename(<String as Clone>::clone(&args[1]), new_file)?;
 
     Ok(())
 }
