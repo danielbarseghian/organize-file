@@ -26,10 +26,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .into()); // convert the error to box
         }
 
-        // splits for checking the extension
-        let splits: Vec<&str> = args[i].split(".").collect();
+        let extension;
 
-        let folder = format!("./organize/{}", splits[1]);
+        // There is a .
+        if args[1].contains(".") {
+            // splits for checking the extension
+            let splits: Vec<&str> = args[i].split(".").collect();
+
+            extension = splits[1].to_string();
+
+        } else { // there are no .
+            extension = args[1].to_string();
+        }
+
+
+        let folder = format!("./organize/{}", extension);
 
         let paths = Path::new(&folder);
 
