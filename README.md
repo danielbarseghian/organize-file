@@ -5,7 +5,7 @@ This project is for [Stardance](https://stardance.hackclub.com/@barseghian_danie
 
 ## How to set up and run
 
-1. Install rust
+### Install rust
 
 Install the latest stable version of Rust using `rustup`.
 
@@ -58,7 +58,7 @@ cargo --version
 
 Both commands should print a version number.
 
-2. Install the project and run it!
+### Install the project and run it!
 
     1. First clone the project
     ``` bash 
