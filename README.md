@@ -69,6 +69,9 @@ git clone https://github.com/danielbarseghian/organize-file.git
 cd organize-file
 ```
 3. Then run it!
+
+The files should be in the root folder
+
 ``` bash
 cargo run -- filenames
 ```
