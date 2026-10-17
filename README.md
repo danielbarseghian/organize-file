@@ -77,3 +77,7 @@ Both commands should print a version number.
 ## Descirption
 This is my first project after completing the rustlings! it was really challenging to go from exercices to full on projects! But it was very fun!
 
+## License
+
+This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) file for the full license text.
+
