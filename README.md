@@ -9,7 +9,7 @@ This project is for [Stardance](https://stardance.hackclub.com/@barseghian_danie
 
 Install the latest stable version of Rust using `rustup`.
 
-## macOS
+#### macOS
 
 1. Open **Terminal**.
 2. Run:
@@ -25,13 +25,13 @@ Install the latest stable version of Rust using `rustup`.
    xcode-select --install
    ```
 
-## Windows
+#### Windows
 
 1. Download and run [`rustup-init.exe`](https://rustup.rs/).
 2. Follow the prompts.
 3. If prompted, install the Visual Studio C++ build tools. Rust needs them to link native programs.
 
-## Linux
+#### Linux
 
 1. Open a terminal.
 2. Run:
