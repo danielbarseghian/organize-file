@@ -60,19 +60,19 @@ Both commands should print a version number.
 
 ### Install the project and run it!
 
-    1. First clone the project
-    ``` bash 
-    git clone https://github.com/danielbarseghian/organize-file.git
-    ``` 
-    2. Then cd into it
-    ``` bash
-    cd organize-file
-    ```
-    3. Then run it!
-    ``` bash
-    cargo run -- filenames
-    ```
-    > You can organize mutliple files by giving the files name then a space then the second filename
+1. First clone the project
+``` bash 
+git clone https://github.com/danielbarseghian/organize-file.git
+``` 
+2. Then cd into it
+``` bash
+cd organize-file
+```
+3. Then run it!
+``` bash
+cargo run -- filenames
+```
+> You can organize mutliple files by giving the files name then a space then the second filename
 
 ## Descirption
 This is my first project after completing the rustlings! it was really challenging to go from exercices to full on projects! But it was very fun!
